@@ -19,8 +19,11 @@ class BookController extends Controller
     /**
 	* GET /books/{title}
 	*/
-    public function showBook($title) {
-        return 'Results for the book: '.$title;
+    public function show($title) {
+        // return 'Results for the book: '.$title;
+
+        return view('books.show')->with(['title' => $title]);
+
 	}
 
 }

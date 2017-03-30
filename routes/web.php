@@ -49,8 +49,31 @@ Route::get('/books', 'BookController@index');
 //
 // });
 
-Route::get('/book/{title}', 'BookController@showBook');
+Route::get('/book/{title}', 'BookController@show');
 
 
 # practice
 Route::any('/practice/{n?}', 'PracticeController@index');
+
+
+# example rych-random route
+Route::get('/exampleX', 'PracticeController@exampleX');
+
+
+# example debugbar route
+Route::get('/debugbar', function() {
+
+    $data = Array('foo' => 'bar');
+    Debugbar::info($data);
+    Debugbar::info('Current environment: '.App::environment());
+    Debugbar::error('Error!');
+    Debugbar::warning('Watch out…');
+    Debugbar::addMessage('Another message', 'mylabel');
+
+    return 'Just demoing some of the features of Debugbar';
+
+});
+
+
+# LaravelLogViewer
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

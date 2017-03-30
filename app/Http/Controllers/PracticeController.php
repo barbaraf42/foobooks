@@ -8,6 +8,13 @@ class PracticeController extends Controller
 {
 
 
+    public function exampleX() {
+        $random = new \Rych\Random\Random();
+        return $random->getRandomString(8);
+    }
+
+
+
     /**
 	*
 	*/
@@ -16,7 +23,7 @@ class PracticeController extends Controller
     }
 
 
-    
+
     /**
 	*
 	*/
