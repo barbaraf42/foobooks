@@ -76,4 +76,6 @@ Route::get('/debugbar', function() {
 
 
 # LaravelLogViewer
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+if (config('app.env') == 'local') {
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+}
