@@ -49,7 +49,13 @@ Route::get('/books', 'BookController@index');
 //
 // });
 
-Route::get('/book/{title}', 'BookController@show');
+
+
+Route::get('/books/new', 'BookController@createNewBook');
+Route::post('/books/new', 'BookController@storeNewBook');
+
+
+Route::get('/books/{title}', 'BookController@show');
 
 
 # practice
@@ -79,3 +85,7 @@ Route::get('/debugbar', function() {
 if (config('app.env') == 'local') {
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 }
+
+
+# search
+Route::get('/search', 'BookController@search');
