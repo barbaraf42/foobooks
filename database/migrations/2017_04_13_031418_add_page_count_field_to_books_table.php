@@ -13,9 +13,9 @@ class AddPageCountFieldToBooksTable extends Migration
      */
     public function up()
     {
-        Schema::table('books', function (Blueprint $table) {
-            $table->integer('page_count');
-        });
+        #Schema::table('books', function (Blueprint $table) {
+        #    $table->integer('page_count');
+        #});
     }
 
     /**
@@ -25,8 +25,8 @@ class AddPageCountFieldToBooksTable extends Migration
      */
     public function down()
     {
-        Schema::table('books', function (Blueprint $table) {
-    		$table->dropColumn('page_count');
-    	});
+        #Schema::table('books', function (Blueprint $table) {
+    	#	$table->dropColumn('page_count');
+    	#});
     }
 }
